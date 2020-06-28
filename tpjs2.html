@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #horloge {
+  border: 6px solid #080;
+  border-radius: 50%;
+}
+#horloge line {
+  stroke-width: 3;
+  stroke: green;
+}
+#horloge circle {
+  fill: red;
+}
+.text-center {
+  text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="text-center" onclick="annuler()">
+    <svg id="horloge" width="200" height="200" viewBox="-100 -100 200 200">
+      <line y2="-90" />
+      <circle r="10" />
+    </svg>
+  </div>
+  <script> 
+   let angle = 0;
+const aig = document.querySelector("#horloge line");
+const tid = setInterval(function () {
+  angle = angle < 360 ? angle + 6 : 0;
+  const val = "rotate(" + angle + ")";
+  aig.setAttribute("transform", val);
+  console.log("tick ", angle);
+}, 1000);
+
+const tid2= setTimeout(stop,15000);
+function stop() {
+  clearInterval(tid)
+}
+function annuler(){
+
+    clearTimeout(tid2);
+}
+
+  </script>
+
+</body>
+</html>

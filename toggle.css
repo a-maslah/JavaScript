@@ -1,0 +1,43 @@
+*{
+
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.ctn{
+    width:80%;
+    border:2px solid black;
+    
+}
+.ctn button{
+
+    padding:0.6rem 2rem;
+    margin: 0.2rem auto;
+    display:block;
+    margin-top:0.4rem;
+}
+.ctn p{
+
+    padding:1rem;
+    border:1px solid black;
+    margin:0.4rem;
+    transition: 1s;
+}
+.hide{
+    animation: fadeOut 2s;
+    /*opacity:0;*/
+    /*transition:2s;*/
+}
+@keyframes fadeOut{
+
+      from{
+          opacity:1;     
+         }
+    99%{
+        opacity:0;
+    }
+    to{
+     display: none;
+    }
+}
